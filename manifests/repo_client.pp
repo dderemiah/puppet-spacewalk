@@ -20,6 +20,14 @@ class spacewalk::repo_client
                 command => 'rpm -Uvh http://yum.spacewalkproject.org/2.7-client/RHEL/6/x86_64/spacewalk-client-repo-2.7-2.el6.noarch.rpm'
               }
             }
+            /^7/: {
+              exec {'setupSpacewalkClientRepo':
+                cwd     => '/etc/yum.repos.d',
+                path    => '/usr/bin:/usr/sbin:/bin',
+                creates => '/etc/yum.repos.d/spacewalk-client.repo',
+                command => 'rpm -Uvh http://yum.spacewalkproject.org/2.7-client/RHEL/7/x86_64/spacewalk-client-repo-2.7-2.el7.noarch.rpm'
+              }
+            }
             default: {
               fail("OS family ${::osfamily} not supported")
             }
