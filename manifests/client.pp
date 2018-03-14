@@ -14,7 +14,8 @@ class spacewalk::client (
   include spacewalk::repo_client
 
   # spacewalk client packages needed
-  $packageList = ['rhn-client-tools','rhn-check','rhn-setup','m2crypto','yum-rhn-plugin','wget','rhnsd','osad','rhncfg-actions','rhncfg-management' ]
+  $packageList = ['rhn-client-tools','rhn-check','rhn-setup','m2crypto','yum-rhn-plugin','wget',
+  'rhnsd','osad','rhncfg-actions','rhncfg-management' ]
 
   package {$packageList:
     ensure => installed,
