@@ -9,7 +9,7 @@ class spacewalk::repo_client
                 cwd => '/etc/yum.repos.d',
                 path   => "/usr/bin:/usr/sbin:/bin",
                 creates => '/etc/yum.repos.d/spacewalk-client.repo',
-                command => 'rpm -Uvh http://yum.spacewalkproject.org/2.7-client/RHEL/5/x86_64/spacewalk-client-repo-2.7-2.el5.noarch.rpm'
+                command => 'rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/5/x86_64/spacewalk-client-repo-2.6-0.el5.noarch.rpm'
               }
             }
             /^6/: {
@@ -17,7 +17,7 @@ class spacewalk::repo_client
                 cwd     => '/etc/yum.repos.d',
                 path    => '/usr/bin:/usr/sbin:/bin',
                 creates => '/etc/yum.repos.d/spacewalk-client.repo',
-                command => 'rpm -Uvh http://yum.spacewalkproject.org/2.7-client/RHEL/6/x86_64/spacewalk-client-repo-2.7-2.el6.noarch.rpm'
+                command => 'rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/6/x86_64/spacewalk-client-repo-2.6-0.el6.noarch.rpm'
               }
             }
             /^7/: {
